@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 240, 151, 158;
+  --background-rgb: 25, 31, 49;
+}
+
+/* Improved viewport height handling */
+html {
+  height: 100%;
+  height: -webkit-fill-available;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+/* Add after the existing body styles */
+h2,
+p {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Improved touch handling */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* Optimized glass effect */
+.glass {
+  background: rgba(79, 68, 56, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(140, 129, 115, 0.1);
+  will-change: transform;
+  will-change: transform, opacity;
+}
+
+/* Optimized shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.coffee-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(240, 151, 158, 0) 0%,
+    rgba(240, 151, 158, 0.2) 25%,
+    rgba(240, 151, 158, 0.2) 50%,
+    rgba(240, 151, 158, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+  will-change: background-position, opacity;
+}
+
+/* Ensure proper viewport handling */
+#__next,
+main {
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Optimized scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(13, 4, 12, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(224, 77, 84, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(224, 77, 84, 0.7);
+}
+
+/* Dynamic text sizing */
+@media screen and (max-height: 600px) {
+  .text-xs {
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
+  .text-sm {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+}
+
+/* Landscape mode optimizations */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  .text-xs {
+    font-size: 0.6rem;
+    line-height: 1.1;
+  }
+  .text-sm {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+}
+
+/* Prevent iOS Safari zoom */
+@supports (-webkit-touch-callout: none) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Handle notched devices */
+@supports (padding: max(0px)) {
+  .body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Ultra-wide screen optimizations */
+@media screen and (min-width: 2000px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* High-DPI screen optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hover capability detection */
+@media (hover: hover) {
+  .hover-enabled {
+    transition: all 0.2s cubic-bezier(0.21, 0.45, 0.32, 0.9);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .touch-device {
+    cursor: default;
+  }
+}
+
+/* Orientation-specific styles */
+@media screen and (orientation: landscape) {
+  .landscape-optimize {
+    padding: 0.5rem;
+  }
+}
+
+/* Device-specific optimizations */
+@supports (-webkit-touch-callout: none) {
+  .ios-optimize {
+    letter-spacing: -0.01em;
+  }
+}
+
+@media (pointer: fine) {
+  .motion-safe {
+    will-change: transform, opacity;
+  }
+}
+
