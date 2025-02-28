@@ -6,9 +6,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Vercel Galaxy | Interactive Tool Hub",
+  title: "Explore | SDAD",
   description: "Discover powerful tools to enhance your productivity and creativity",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
