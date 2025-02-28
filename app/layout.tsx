@@ -6,7 +6,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Explore The Unknown",
+  title: "Vercel Galaxy | Interactive Tool Hub",
   description: "Discover powerful tools to enhance your productivity and creativity",
     generator: 'v0.dev'
 }

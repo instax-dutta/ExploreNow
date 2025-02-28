@@ -3,11 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 240, 151, 158;
-  --background-rgb: 25, 31, 49;
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
 }
 
-/* Improved viewport height handling */
 html {
   height: 100%;
   height: -webkit-fill-available;
@@ -26,13 +25,11 @@ body {
   overscroll-behavior: none;
 }
 
-/* Add after the existing body styles */
 h2,
 p {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Improved touch handling */
 * {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -41,17 +38,14 @@ p {
   touch-action: manipulation;
 }
 
-/* Optimized glass effect */
 .glass {
-  background: rgba(79, 68, 56, 0.05);
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(140, 129, 115, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   will-change: transform;
-  will-change: transform, opacity;
 }
 
-/* Optimized shimmer animation */
 @keyframes shimmer {
   0% {
     background-position: -100% 0;
@@ -61,20 +55,19 @@ p {
   }
 }
 
-.coffee-shimmer {
+.vercel-shimmer {
   background: linear-gradient(
     90deg,
-    rgba(240, 151, 158, 0) 0%,
-    rgba(240, 151, 158, 0.2) 25%,
-    rgba(240, 151, 158, 0.2) 50%,
-    rgba(240, 151, 158, 0) 100%
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 112, 243, 0.2) 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(0, 0, 0, 0) 100%
   );
   background-size: 200% 100%;
   animation: shimmer 4s ease-in-out infinite;
   will-change: background-position, opacity;
 }
 
-/* Ensure proper viewport handling */
 #__next,
 main {
   height: calc(var(--vh, 1vh) * 100);
@@ -82,26 +75,24 @@ main {
   overflow: hidden;
 }
 
-/* Optimized scrollbar */
 ::-webkit-scrollbar {
   width: 3px;
   height: 3px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(13, 4, 12, 0.3);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(224, 77, 84, 0.5);
+  background: rgba(0, 112, 243, 0.5);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(224, 77, 84, 0.7);
+  background: rgba(0, 112, 243, 0.7);
 }
 
-/* Dynamic text sizing */
 @media screen and (max-height: 600px) {
   .text-xs {
     font-size: 0.65rem;
@@ -113,7 +104,6 @@ main {
   }
 }
 
-/* Landscape mode optimizations */
 @media screen and (orientation: landscape) and (max-height: 600px) {
   .text-xs {
     font-size: 0.6rem;
@@ -125,7 +115,6 @@ main {
   }
 }
 
-/* Prevent iOS Safari zoom */
 @supports (-webkit-touch-callout: none) {
   input,
   select,
@@ -134,7 +123,6 @@ main {
   }
 }
 
-/* Handle notched devices */
 @supports (padding: max(0px)) {
   .body {
     padding-left: env(safe-area-inset-left);
@@ -144,14 +132,12 @@ main {
   }
 }
 
-/* Ultra-wide screen optimizations */
 @media screen and (min-width: 2000px) {
   .container {
     max-width: 1400px;
   }
 }
 
-/* High-DPI screen optimizations */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   * {
     -webkit-font-smoothing: antialiased;
@@ -159,7 +145,6 @@ main {
   }
 }
 
-/* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -169,28 +154,24 @@ main {
   }
 }
 
-/* Hover capability detection */
 @media (hover: hover) {
   .hover-enabled {
-    transition: all 0.2s cubic-bezier(0.21, 0.45, 0.32, 0.9);
+    transition: all 0.3s cubic-bezier(0.21, 0.45, 0.42, 0.9);
   }
 }
 
-/* Touch device optimizations */
 @media (hover: none) {
   .touch-device {
     cursor: default;
   }
 }
 
-/* Orientation-specific styles */
 @media screen and (orientation: landscape) {
   .landscape-optimize {
     padding: 0.5rem;
   }
 }
 
-/* Device-specific optimizations */
 @supports (-webkit-touch-callout: none) {
   .ios-optimize {
     letter-spacing: -0.01em;
@@ -200,6 +181,38 @@ main {
 @media (pointer: fine) {
   .motion-safe {
     will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform: translateZ(0);
   }
+}
+
+.vercel-text {
+  text-shadow: 0 0 5px rgba(0, 112, 243, 0.5), 0 0 10px rgba(0, 112, 243, 0.3), 0 0 15px rgba(0, 112, 243, 0.2);
+}
+
+.vercel-border {
+  box-shadow: 0 0 5px rgba(0, 112, 243, 0.5), 0 0 10px rgba(0, 112, 243, 0.3), 0 0 15px rgba(0, 112, 243, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff, #0070f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
 }
 

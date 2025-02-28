@@ -32,7 +32,7 @@ export default function LinkGalaxy() {
       setViewportHeight(vh)
       setViewportWidth(vw)
       setOrientation(vh > vw ? "portrait" : "landscape")
-      setIsMobile(vw < 768) // Update mobile detection
+      setIsMobile(vw < 768)
     }
 
     updateViewport()
@@ -57,12 +57,10 @@ export default function LinkGalaxy() {
       })
     }
 
-    // Add event listeners with cleanup
     window.addEventListener("mousemove", handleMouseMove, { passive: true })
     window.addEventListener("touchmove", handleTouchMove, { passive: true })
     window.addEventListener("orientationchange", updateViewport)
 
-    // Handle iOS viewport height issues
     const handleVisualViewportResize = () => {
       document.documentElement.style.setProperty("--vh", `${window.visualViewport?.height * 0.01}px`)
     }
@@ -90,9 +88,8 @@ export default function LinkGalaxy() {
       description: "A pomodoro technique Productivity timer",
       url: "https://focus.racer.news",
       icon: <Clock className="w-5 h-5 sm:w-6 sm:h-6" />,
-      color: "#514053",
-      hoverColor: "#F0979E",
-      activeColor: "#E04D54",
+      gradient: "linear-gradient(135deg, #111111, #000000)",
+      hoverGradient: "linear-gradient(135deg, #000000, #0070F3)",
     },
     {
       id: 2,
@@ -100,9 +97,8 @@ export default function LinkGalaxy() {
       description: "Simple & Private Filesharing",
       url: "https://send.sdad.pro",
       icon: <Send className="w-5 h-5 sm:w-6 sm:h-6" />,
-      color: "#965260",
-      hoverColor: "#F0979E",
-      activeColor: "#E04D54",
+      gradient: "linear-gradient(135deg, #000000, #111111)",
+      hoverGradient: "linear-gradient(135deg, #111111, #0070F3)",
     },
     {
       id: 3,
@@ -110,9 +106,8 @@ export default function LinkGalaxy() {
       description: "A minimalistic, private online Pastebin",
       url: "https://paste.sdad.pro",
       icon: <FileText className="w-5 h-5 sm:w-6 sm:h-6" />,
-      color: "#514053",
-      hoverColor: "#F0979E",
-      activeColor: "#E04D54",
+      gradient: "linear-gradient(135deg, #111111, #000000)",
+      hoverGradient: "linear-gradient(135deg, #000000, #0070F3)",
     },
     {
       id: 4,
@@ -120,9 +115,8 @@ export default function LinkGalaxy() {
       description: "A internet speedtesting service",
       url: "https://speedtest.sdad.pro",
       icon: <Gauge className="w-5 h-5 sm:w-6 sm:h-6" />,
-      color: "#965260",
-      hoverColor: "#F0979E",
-      activeColor: "#E04D54",
+      gradient: "linear-gradient(135deg, #000000, #111111)",
+      hoverGradient: "linear-gradient(135deg, #111111, #0070F3)",
     },
     {
       id: 5,
@@ -130,9 +124,8 @@ export default function LinkGalaxy() {
       description: "A suite of powerful tools for your business",
       url: "https://bizzforge.sdad.pro",
       icon: <Briefcase className="w-5 h-5 sm:w-6 sm:h-6" />,
-      color: "#514053",
-      hoverColor: "#F0979E",
-      activeColor: "#E04D54",
+      gradient: "linear-gradient(135deg, #111111, #000000)",
+      hoverGradient: "linear-gradient(135deg, #000000, #0070F3)",
     },
     {
       id: 6,
@@ -140,9 +133,8 @@ export default function LinkGalaxy() {
       description: "A ambient sounds library for focus and calm",
       url: "https://peace.sdad.pro",
       icon: <Music className="w-5 h-5 sm:w-6 sm:h-6" />,
-      color: "#965260",
-      hoverColor: "#F0979E",
-      activeColor: "#E04D54",
+      gradient: "linear-gradient(135deg, #000000, #111111)",
+      hoverGradient: "linear-gradient(135deg, #111111, #0070F3)",
     },
     {
       id: 7,
@@ -150,9 +142,8 @@ export default function LinkGalaxy() {
       description: "A collection of handy online tools for developers",
       url: "https://toools.sdad.pro",
       icon: <Tools className="w-5 h-5 sm:w-6 sm:h-6" />,
-      color: "#514053",
-      hoverColor: "#F0979E",
-      activeColor: "#E04D54",
+      gradient: "linear-gradient(135deg, #111111, #000000)",
+      hoverGradient: "linear-gradient(135deg, #000000, #0070F3)",
     },
     {
       id: 8,
@@ -160,9 +151,8 @@ export default function LinkGalaxy() {
       description: "The Cyber Swiss Army knife For You",
       url: "https://swiss.sdad.pro",
       icon: <Swiss className="w-5 h-5 sm:w-6 sm:h-6" />,
-      color: "#965260",
-      hoverColor: "#F0979E",
-      activeColor: "#E04D54",
+      gradient: "linear-gradient(135deg, #000000, #111111)",
+      hoverGradient: "linear-gradient(135deg, #111111, #0070F3)",
     },
     {
       id: 9,
@@ -170,9 +160,8 @@ export default function LinkGalaxy() {
       description: "A online whiteboard Collaboration platform",
       url: "https://excali.sdad.pro",
       icon: <PenTool className="w-5 h-5 sm:w-6 sm:h-6" />,
-      color: "#514053",
-      hoverColor: "#F0979E",
-      activeColor: "#E04D54",
+      gradient: "linear-gradient(135deg, #111111, #000000)",
+      hoverGradient: "linear-gradient(135deg, #000000, #0070F3)",
     },
     {
       id: 10,
@@ -180,23 +169,19 @@ export default function LinkGalaxy() {
       description: "Powerful Webased PDF Manipulator Tool",
       url: "https://pdf.sdad.pro",
       icon: <FileText2 className="w-5 h-5 sm:w-6 sm:h-6" />,
-      color: "#965260",
-      hoverColor: "#F0979E",
-      activeColor: "#E04D54",
+      gradient: "linear-gradient(135deg, #000000, #111111)",
+      hoverGradient: "linear-gradient(135deg, #111111, #0070F3)",
     },
   ]
 
   const getContainerStyles = () => {
-    // Dynamic container width based on screen size and orientation
     const baseStyles = "z-10 w-full flex flex-col justify-center"
-    let widthStyles = "max-w-[95vw] px-2" // Mobile default
+    let widthStyles = "max-w-[95vw] px-2"
 
     if (viewportWidth >= 640) {
-      // SM breakpoint
       widthStyles = orientation === "landscape" ? "max-w-[85vw] px-4" : "max-w-[90vw] px-3"
     }
     if (viewportWidth >= 1024) {
-      // LG breakpoint
       widthStyles =
         orientation === "landscape" ? "max-w-[75vw] xl:max-w-[60vw] 2xl:max-w-[50vw] px-6" : "max-w-[85vw] px-4"
     }
@@ -205,10 +190,9 @@ export default function LinkGalaxy() {
   }
 
   const getCardStyles = (isActive: boolean) => {
-    // Dynamic card sizing based on viewport
-    const baseStyles = "relative rounded-lg overflow-hidden backdrop-blur-md bg-opacity-20 border border-[#8C8173]/20"
+    const baseStyles = "relative rounded-lg overflow-hidden backdrop-blur-md bg-opacity-20 border border-white/10"
 
-    let sizeStyles = "p-2 min-h-[3rem]" // Mobile default
+    let sizeStyles = "p-2 min-h-[3rem]"
     if (viewportHeight >= 700) {
       sizeStyles = "p-2.5 min-h-[3.5rem]"
     }
@@ -223,7 +207,6 @@ export default function LinkGalaxy() {
   }
 
   const getGapSize = () => {
-    // Dynamic gap sizing based on viewport
     if (viewportHeight < 600) return "gap-1"
     if (viewportHeight < 700) return "gap-1.5"
     if (viewportHeight < 800) return "gap-2"
@@ -231,7 +214,6 @@ export default function LinkGalaxy() {
   }
 
   const getTextStyles = (type: "title" | "description") => {
-    // Dynamic text sizing based on viewport
     if (type === "title") {
       if (viewportHeight < 600) return "text-xs"
       if (viewportHeight < 700) return "text-sm"
@@ -244,7 +226,6 @@ export default function LinkGalaxy() {
   }
 
   const getIconSize = () => {
-    // Dynamic icon sizing based on viewport
     if (viewportHeight < 600) return "w-6 h-6"
     if (viewportHeight < 700) return "w-7 h-7"
     return "w-8 h-8 sm:w-10 sm:h-10"
@@ -255,47 +236,55 @@ export default function LinkGalaxy() {
       className="relative w-screen overflow-hidden text-white flex items-center justify-center"
       style={{
         height: "calc(var(--vh, 1vh) * 100)",
-        background: "#191F31",
+        background: "#000000",
         backgroundImage: `radial-gradient(
           circle at ${mousePosition.x}px ${mousePosition.y}px,
-          rgba(240, 151, 158, 0.4) 0%,
-          rgba(25, 31, 49, 0.8) 40%,
-          rgba(25, 31, 49, 1) 100%
+          rgba(0, 112, 243, 0.15) 0%,
+          rgba(0, 0, 0, 0.8) 40%,
+          rgba(0, 0, 0, 1) 100%
         )`,
         touchAction: "none",
       }}
     >
       {/* Background particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: isMobile ? 15 : 20 }).map((_, i) => (
+        {Array.from({ length: isMobile ? 12 : 16 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-[#E04D54]"
+            className="absolute rounded-full"
             initial={{
               x: Math.random() * viewportWidth,
               y: Math.random() * viewportHeight,
               scale: Math.random() * 0.5 + 0.1,
+              background: Math.random() > 0.5 ? "#FFFFFF" : "#0070F3",
             }}
             animate={{
               x: [Math.random() * viewportWidth, Math.random() * viewportWidth],
               y: [Math.random() * viewportHeight, Math.random() * viewportHeight],
-              opacity: [0.1, 0.25, 0.1], // Update: opacity animation
+              opacity: [0.1, 0.3, 0.1],
             }}
             transition={{
-              duration: Math.random() * 15 + 15, // Update: duration
+              duration: Math.random() * 20 + 20,
               ease: "linear",
               repeat: Number.POSITIVE_INFINITY,
+              opacity: {
+                duration: 3,
+                ease: "easeInOut",
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "reverse",
+              },
             }}
             style={{
               width: `${Math.random() * (isMobile ? 4 : 6) + 1}px`,
               height: `${Math.random() * (isMobile ? 4 : 6) + 1}px`,
+              filter: "blur(1px)",
             }}
           />
         ))}
       </div>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#514053]/5 to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#111111]/10 to-transparent pointer-events-none"></div>
 
       <div className={getContainerStyles()}>
         <motion.div
@@ -310,16 +299,22 @@ export default function LinkGalaxy() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{
-                duration: 0.6,
-                delay: index * (isMobile ? 0.06 : 0.1),
-                ease: [0.21, 0.45, 0.32, 0.9],
+                duration: 0.8,
+                delay: index * (isMobile ? 0.08 : 0.12),
+                ease: [0.21, 0.45, 0.42, 0.9],
               }}
               whileHover={{
                 scale: isMobile ? 1.01 : 1.015,
+                x: 4,
                 zIndex: 10,
                 transition: {
-                  duration: 0.2,
+                  duration: 0.3,
                   ease: "easeOut",
+                  scale: {
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 20,
+                  },
                 },
               }}
               onHoverStart={() => setActiveCard(link.id)}
@@ -330,30 +325,33 @@ export default function LinkGalaxy() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full focus:outline-none focus:ring-2 focus:ring-[#E04D54]/50 rounded-lg"
+                className="block w-full focus:outline-none focus:ring-2 focus:ring-[#0070F3]/50 rounded-lg"
               >
                 <motion.div
-                  className={`${getCardStyles(activeCard === link.id)} flex items-center transition-colors duration-200`}
+                  className={`${getCardStyles(activeCard === link.id)} flex items-center transition-all duration-500`}
                   style={{
                     backdropFilter: "blur(10px)",
-                    backgroundColor: activeCard === link.id ? link.hoverColor : link.color,
+                    background: activeCard === link.id ? link.hoverGradient : link.gradient,
                     boxShadow:
                       activeCard === link.id
-                        ? "0 0 20px rgba(224, 77, 84, 0.2), inset 0 0 20px rgba(224, 77, 84, 0.1)"
+                        ? "0 0 20px rgba(0, 112, 243, 0.2), inset 0 0 20px rgba(0, 112, 243, 0.1)"
                         : "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
                   }}
                 >
                   <div
-                    className={`flex items-center justify-center ${getIconSize()} rounded-full bg-[#0D040C] backdrop-blur-lg mr-3`}
+                    className={`flex items-center justify-center ${getIconSize()} rounded-full bg-black/90 backdrop-blur-lg mr-3`}
                   >
                     <motion.div
                       initial={{ scale: 1 }}
-                      animate={{ scale: activeCard === link.id ? [1, 1.15, 1] : 1 }}
+                      animate={{
+                        scale: activeCard === link.id ? [1, 1.15, 1] : 1,
+                      }}
                       transition={{
-                        duration: 2,
+                        duration: 2.5,
                         ease: "easeInOut",
                         repeat: activeCard === link.id ? Number.POSITIVE_INFINITY : 0,
                         repeatType: "reverse",
+                        repeatDelay: 0.5,
                       }}
                     >
                       {link.icon}
@@ -361,13 +359,13 @@ export default function LinkGalaxy() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h2 className={`font-bold truncate text-white ${getTextStyles("title")}`}>{link.name}</h2>
-                    <p className={`truncate text-[#F0979E] font-medium ${getTextStyles("description")}`}>
+                    <p className={`truncate text-white/90 font-medium ${getTextStyles("description")}`}>
                       {link.description}
                     </p>
                   </div>
 
                   {/* Glass reflection effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-30 pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-30 pointer-events-none"></div>
 
                   {/* Card particles */}
                   <AnimatePresence>
@@ -376,27 +374,29 @@ export default function LinkGalaxy() {
                         {Array.from({ length: 3 }).map((_, i) => (
                           <motion.div
                             key={i}
-                            className="absolute rounded-full bg-[#E04D54]"
+                            className="absolute rounded-full"
                             initial={{
                               x: "50%",
                               y: "50%",
                               scale: 0,
                               opacity: 0.7,
+                              background: Math.random() > 0.5 ? "#0070F3" : "#FFFFFF",
                             }}
                             animate={{
                               x: `${Math.random() * 100}%`,
                               y: `${Math.random() * 100}%`,
-                              scale: Math.random() * 0.4 + 0.1, // Update: scale animation
+                              scale: Math.random() * 0.4 + 0.1,
                               opacity: 0,
                             }}
                             exit={{ opacity: 0, scale: 0 }}
                             transition={{
-                              duration: 1.2, // Update: duration
+                              duration: 1.2,
                               ease: "easeOut",
                             }}
                             style={{
                               width: "4px",
                               height: "4px",
+                              filter: "blur(1px)",
                             }}
                           />
                         ))}
