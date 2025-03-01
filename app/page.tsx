@@ -126,7 +126,7 @@ export default function LinkGalaxy() {
       id: 7,
       name: "IT Tools",
       description: "A collection of handy online tools for developers",
-      url: "https://toools.sdad.pro",
+      url: "https://tools.sdad.pro",
       icon: <Tools className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
