@@ -25,7 +25,6 @@ export default function LinkGalaxy() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    // Update viewport dimensions and device detection
     const updateViewport = () => {
       const vw = window.innerWidth
       const vh = window.innerHeight
@@ -38,7 +37,6 @@ export default function LinkGalaxy() {
     updateViewport()
     window.addEventListener("resize", updateViewport)
 
-    // Handle mouse/touch movement with performance optimization
     const handleMouseMove = (e: MouseEvent) => {
       requestAnimationFrame(() => {
         setMousePosition({
@@ -88,8 +86,6 @@ export default function LinkGalaxy() {
       description: "A pomodoro technique Productivity timer",
       url: "https://focus.racer.news",
       icon: <Clock className="w-5 h-5 sm:w-6 sm:h-6" />,
-      gradient: "linear-gradient(135deg, #111111, #000000)",
-      hoverGradient: "linear-gradient(135deg, #000000, #0070F3)",
     },
     {
       id: 2,
@@ -97,8 +93,6 @@ export default function LinkGalaxy() {
       description: "Simple & Private Filesharing",
       url: "https://send.sdad.pro",
       icon: <Send className="w-5 h-5 sm:w-6 sm:h-6" />,
-      gradient: "linear-gradient(135deg, #000000, #111111)",
-      hoverGradient: "linear-gradient(135deg, #111111, #0070F3)",
     },
     {
       id: 3,
@@ -106,8 +100,6 @@ export default function LinkGalaxy() {
       description: "A minimalistic, private online Pastebin",
       url: "https://paste.sdad.pro",
       icon: <FileText className="w-5 h-5 sm:w-6 sm:h-6" />,
-      gradient: "linear-gradient(135deg, #111111, #000000)",
-      hoverGradient: "linear-gradient(135deg, #000000, #0070F3)",
     },
     {
       id: 4,
@@ -115,8 +107,6 @@ export default function LinkGalaxy() {
       description: "A internet speedtesting service",
       url: "https://speedtest.sdad.pro",
       icon: <Gauge className="w-5 h-5 sm:w-6 sm:h-6" />,
-      gradient: "linear-gradient(135deg, #000000, #111111)",
-      hoverGradient: "linear-gradient(135deg, #111111, #0070F3)",
     },
     {
       id: 5,
@@ -124,8 +114,6 @@ export default function LinkGalaxy() {
       description: "A suite of powerful tools for your business",
       url: "https://bizzforge.sdad.pro",
       icon: <Briefcase className="w-5 h-5 sm:w-6 sm:h-6" />,
-      gradient: "linear-gradient(135deg, #111111, #000000)",
-      hoverGradient: "linear-gradient(135deg, #000000, #0070F3)",
     },
     {
       id: 6,
@@ -133,8 +121,6 @@ export default function LinkGalaxy() {
       description: "A ambient sounds library for focus and calm",
       url: "https://peace.sdad.pro",
       icon: <Music className="w-5 h-5 sm:w-6 sm:h-6" />,
-      gradient: "linear-gradient(135deg, #000000, #111111)",
-      hoverGradient: "linear-gradient(135deg, #111111, #0070F3)",
     },
     {
       id: 7,
@@ -142,8 +128,6 @@ export default function LinkGalaxy() {
       description: "A collection of handy online tools for developers",
       url: "https://toools.sdad.pro",
       icon: <Tools className="w-5 h-5 sm:w-6 sm:h-6" />,
-      gradient: "linear-gradient(135deg, #111111, #000000)",
-      hoverGradient: "linear-gradient(135deg, #000000, #0070F3)",
     },
     {
       id: 8,
@@ -151,8 +135,6 @@ export default function LinkGalaxy() {
       description: "The Cyber Swiss Army knife For You",
       url: "https://swiss.sdad.pro",
       icon: <Swiss className="w-5 h-5 sm:w-6 sm:h-6" />,
-      gradient: "linear-gradient(135deg, #000000, #111111)",
-      hoverGradient: "linear-gradient(135deg, #111111, #0070F3)",
     },
     {
       id: 9,
@@ -160,8 +142,6 @@ export default function LinkGalaxy() {
       description: "A online whiteboard Collaboration platform",
       url: "https://excali.sdad.pro",
       icon: <PenTool className="w-5 h-5 sm:w-6 sm:h-6" />,
-      gradient: "linear-gradient(135deg, #111111, #000000)",
-      hoverGradient: "linear-gradient(135deg, #000000, #0070F3)",
     },
     {
       id: 10,
@@ -169,8 +149,6 @@ export default function LinkGalaxy() {
       description: "Powerful Webased PDF Manipulator Tool",
       url: "https://pdf.sdad.pro",
       icon: <FileText2 className="w-5 h-5 sm:w-6 sm:h-6" />,
-      gradient: "linear-gradient(135deg, #000000, #111111)",
-      hoverGradient: "linear-gradient(135deg, #111111, #0070F3)",
     },
   ]
 
@@ -190,7 +168,8 @@ export default function LinkGalaxy() {
   }
 
   const getCardStyles = (isActive: boolean) => {
-    const baseStyles = "relative rounded-lg overflow-hidden backdrop-blur-md bg-opacity-20 border border-white/10"
+    const baseStyles = "relative rounded-lg overflow-hidden backdrop-blur-md bg-opacity-90 border"
+    const borderColor = isActive ? "border-[#0070F3]" : "border-white/10"
 
     let sizeStyles = "p-2 min-h-[3rem]"
     if (viewportHeight >= 700) {
@@ -203,7 +182,7 @@ export default function LinkGalaxy() {
       sizeStyles += " hover:translate-x-1"
     }
 
-    return `${baseStyles} ${sizeStyles}`
+    return `${baseStyles} ${borderColor} ${sizeStyles}`
   }
 
   const getGapSize = () => {
@@ -283,8 +262,8 @@ export default function LinkGalaxy() {
         ))}
       </div>
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#111111]/10 to-transparent pointer-events-none"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[#111111]/10 pointer-events-none"></div>
 
       <div className={getContainerStyles()}>
         <motion.div
@@ -331,7 +310,7 @@ export default function LinkGalaxy() {
                   className={`${getCardStyles(activeCard === link.id)} flex items-center transition-all duration-500`}
                   style={{
                     backdropFilter: "blur(10px)",
-                    background: activeCard === link.id ? link.hoverGradient : link.gradient,
+                    backgroundColor: activeCard === link.id ? "#111111" : "#000000",
                     boxShadow:
                       activeCard === link.id
                         ? "0 0 20px rgba(0, 112, 243, 0.2), inset 0 0 20px rgba(0, 112, 243, 0.1)"
@@ -339,7 +318,7 @@ export default function LinkGalaxy() {
                   }}
                 >
                   <div
-                    className={`flex items-center justify-center ${getIconSize()} rounded-full bg-black/90 backdrop-blur-lg mr-3`}
+                    className={`flex items-center justify-center ${getIconSize()} rounded-full bg-black/90 backdrop-blur-lg mr-3 border border-white/10`}
                   >
                     <motion.div
                       initial={{ scale: 1 }}
@@ -353,12 +332,18 @@ export default function LinkGalaxy() {
                         repeatType: "reverse",
                         repeatDelay: 0.5,
                       }}
+                      style={{
+                        color: activeCard === link.id ? "#0070F3" : "#FFFFFF",
+                      }}
                     >
                       {link.icon}
                     </motion.div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h2 className={`font-bold truncate text-white ${getTextStyles("title")}`}>{link.name}</h2>
+                    <h2 className={`font-bold truncate text-white ${getTextStyles("title")}`}>
+                      {link.name}
+                      {activeCard === link.id && <span className="ml-2 text-[#0070F3]">→</span>}
+                    </h2>
                     <p className={`truncate text-white/90 font-medium ${getTextStyles("description")}`}>
                       {link.description}
                     </p>

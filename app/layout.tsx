@@ -6,7 +6,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Explore | SDAD",
+  title: "Explore . Enrich . Evaluate",
   description: "Discover powerful tools to enhance your productivity and creativity",
 }
 

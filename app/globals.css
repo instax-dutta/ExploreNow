@@ -187,21 +187,6 @@ main {
   }
 }
 
-.vercel-text {
-  text-shadow: 0 0 5px rgba(0, 112, 243, 0.5), 0 0 10px rgba(0, 112, 243, 0.3), 0 0 15px rgba(0, 112, 243, 0.2);
-}
-
-.vercel-border {
-  box-shadow: 0 0 5px rgba(0, 112, 243, 0.5), 0 0 10px rgba(0, 112, 243, 0.3), 0 0 15px rgba(0, 112, 243, 0.2);
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #ffffff, #0070f3);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 @keyframes float {
   0%,
   100% {
