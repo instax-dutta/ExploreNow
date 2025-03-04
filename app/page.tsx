@@ -150,6 +150,13 @@ export default function LinkGalaxy() {
       url: "https://pdf.sdad.pro",
       icon: <FileText2 className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
+    {
+      id: 11,
+      name: "Genie Labs",
+      description : "AI-powered tools that help you write, analyze, and improve code faster than ever.",
+      url: "https://genielabs.sdad.pro",
+      icon: <Tools className="w-5 h-5 sm:w-6 sm:h-6/>"
+     },
   ]
 
   const getContainerStyles = () => {
